@@ -52,6 +52,10 @@ flutter:
     - assets/blogger.png
     - assets/campanha.png
     - assets/home.png
+    - assets/applogo.png
+    - assets/profile.png
+    - assets/marcalogo.png
+    - assets/campanhalogo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

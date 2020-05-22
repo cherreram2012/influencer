@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'HomeScr.dart';
-import 'InfluencerAddScr.dart';
-import 'CampanhaAddScr.dart';
+import 'InfluencerRegisterScr.dart';
+import 'CampanhaRegisterScr.dart';
 import 'InfluencerListScr.dart';
 import 'CampanhaListScr.dart';
 import 'InfluencerDetailScr.dart';
@@ -71,7 +71,7 @@ class SelectorScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context, MaterialPageRoute(
-                              builder: (context) => InfluencerAddScreen(),
+                              builder: (context) => InfluencerRegisterScreen(),
                             )
                           );
                         },
@@ -89,16 +89,16 @@ class SelectorScreen extends StatelessWidget {
                         child: const Text('Listar', style: TextStyle(fontSize: 20)),
                       ),
                       const SizedBox(height: 10),
-                      RaisedButton (
-                        onPressed: () {
-                          Navigator.push(
-                            context, MaterialPageRoute(
-                              builder: (context) => InfluencerDetailScreen(),
-                            )
-                          );
-                        },
-                        child: const Text('Detalhes', style: TextStyle(fontSize: 20)),
-                      ),
+//                      RaisedButton (
+//                        onPressed: () {
+//                          Navigator.push(
+//                            context, MaterialPageRoute(
+//                              builder: (context) => InfluencerDetailScreen(),
+//                            )
+//                          );
+//                        },
+//                        child: const Text('Detalhes', style: TextStyle(fontSize: 20)),
+//                      ),
                     ]
                   ),
                   const SizedBox(width: 70),
@@ -118,7 +118,7 @@ class SelectorScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context, MaterialPageRoute(
-                                builder: (context) => CampanhaAddScreen(),
+                                builder: (context) => CampanhaRegisterScreen(),
                               )
                             );
                           },
@@ -136,16 +136,16 @@ class SelectorScreen extends StatelessWidget {
                           child: const Text('Listar', style: TextStyle(fontSize: 20)),
                         ),
                         const SizedBox(height: 10),
-                        RaisedButton (
-                          onPressed: () {
-                            Navigator.push(
-                              context, MaterialPageRoute(
-                                builder: (context) => CampanhaDetailScreen(),
-                              )
-                            );
-                          },
-                          child: const Text('Detalhes', style: TextStyle(fontSize: 20)),
-                        ),
+//                        RaisedButton (
+//                          onPressed: () {
+//                            Navigator.push(
+//                              context, MaterialPageRoute(
+//                                builder: (context) => CampanhaDetailScreen(),
+//                              )
+//                            );
+//                          },
+//                          child: const Text('Detalhes', style: TextStyle(fontSize: 20)),
+//                        ),
                       ]
                   ),
                 ]

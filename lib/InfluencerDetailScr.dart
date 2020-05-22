@@ -1,28 +1,49 @@
 import 'package:flutter/material.dart';
+import 'InfluencerVirtualDB.dart';
 
-/*
- *
- * Screen widget <CadastrarCampanha>.
- *
- */
 class InfluencerDetailScreen extends StatelessWidget {
-  /*
-   * Widget constructor.
-   */
-  InfluencerDetailScreen({Key key}) : super(key: key);
+  final Influencer item;
 
-  /*
-   * Widget render method.
-   */
+  InfluencerDetailScreen({Key key, this.item}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detalhe Influencer"),
+        title: Text("Detalhes da campanha"),
       ),
-      body: Center(
-        child:
-        Text('Detales Influencer screen', style: TextStyle(fontSize: 20)),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Container(
+          padding: EdgeInsets.all(0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment:
+            CrossAxisAlignment.start,
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topCenter,
+                child: Image.asset(this.item.img_profile),
+              ),
+              const SizedBox(height: 40),
+              Text("NOME:" + this.item.nome, style:TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              Text("URL: " + this.item.url, style:TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              Text("SEGUIDORES POR REDE SOCIAL: <undefined>", style:TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              Text("ENGAJAMENTO POR REDE SOCIAL: <undefined>", style:TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              Text("% AUDENCIA SEXO: <undefined>", style:TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              Text("% 5 MAIORES CIDADES: <undefined>", style:TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              Text("3 MAIORES AREAS DE INTERESE NAS PUBLICAÇÕES: <undefined>", style:TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              Text("MARCAS PARA QUEM JÁ TRABALHO: <undefined>", style:TextStyle(fontWeight: FontWeight.bold)),
+            ]
+          ),
+        ),
       ),
     );
   }

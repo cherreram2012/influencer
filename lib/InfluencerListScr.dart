@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'InfluencerDetailScr.dart';
+import 'InfluencerVirtualDB.dart';
+import 'InfluencerCard.dart';
 
 /*
  *
- * Screen widget <ListarInfluencer>.
+ * Screen widget <ListarCompanhas>.
  *
  */
 class InfluencerListScreen extends StatelessWidget {
+  final items = Influencer.getInfluencers();
+
   /*
    * Widget constructor.
    */
@@ -17,13 +22,25 @@ class InfluencerListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Listar Influencer"),
-      ),
-      body: Center(
-        child:
-        Text('Listar Influencer screen', style: TextStyle(fontSize: 20)),
-      ),
+        appBar: AppBar(
+          title: Text("Listar Influencer"),
+        ),
+        body: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              child: InfluencerCard(item: items[index]),
+              onTap: () {
+                Navigator.push(
+                  context, MaterialPageRoute(
+                  builder: (context) =>
+                      InfluencerDetailScreen(item: items[index]),
+                ),
+                );
+              },
+            );
+          },
+        )
     );
   }
 }

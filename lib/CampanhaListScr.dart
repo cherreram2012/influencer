@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'CampanhaDetailScr.dart';
+import 'CampanhaVirtualDB.dart';
+import 'CampanhaCard.dart';
 
 /*
  *
@@ -6,6 +9,8 @@ import 'package:flutter/material.dart';
  *
  */
 class CampanhaListScreen extends StatelessWidget {
+  final items = Campanha.getCampanhas();
+
   /*
    * Widget constructor.
    */
@@ -20,10 +25,22 @@ class CampanhaListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Listar Campanhas"),
       ),
-      body: Center(
-        child:
-        Text('Listar Campanhas screen', style: TextStyle(fontSize: 20)),
-      ),
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            child: CampanhaCard(item: items[index]),
+            onTap: () {
+              Navigator.push(
+                context, MaterialPageRoute(
+                builder: (context) =>
+                  CampanhaDetailScreen(item: items[index]),
+              ),
+              );
+            },
+          );
+        },
+      )
     );
   }
 }
